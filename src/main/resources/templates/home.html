@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:"http://www.w3/1999/xhtml"
+xmlns:th = "www.thymeleaf.org">
+<head>
+<title> Your Recipe</title>
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+<body>
+<center>
+<form th:action ="..." method = "POST" th:object = "${requestTodo}" >
+<div class = "form-group">
+   <p>Click here to post your recipe.</p>
+    <input type='button'
+           name="approve"
+           value="Post Recipe" class = "btn btn-default"/>
+</div>
+</form>
+</center>
+</body>
+</html>

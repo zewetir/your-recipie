@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+ <title> Add/Remove dynamic rows in HTML table </title>
+
+   <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+  
+
+ 
+ <script language="javascript">
+  function addRow(tableID) {
+
+   var table = document.getElementById(tableID);
+
+   var rowCount = table.rows.length;
+   var row = table.insertRow(rowCount);
+
+   var cell1 = row.insertCell(0);
+   var element1 = document.createElement("input");
+   element1.type = "checkbox";
+   element1.name="chkbox[]";
+   cell1.appendChild(element1);
+
+   var cell2 = row.insertCell(1);
+   cell2.innerHTML = rowCount + 1;
+
+   var cell3 = row.insertCell(2);
+   var element2 = document.createElement("input");
+   element2.type = "text";
+   element2.name = "txtbox[]";
+   cell3.appendChild(element2);
+
+   var cell4 = row.insertCell(3);
+   var element3 = document.createElement("input");
+   element3.type = "text";
+   element3.name = "textbox[]";
+   cell4.appendChild(element3);
+
+
+  }
+
+  function deleteRow(tableID) {
+   try {
+   var table = document.getElementById(tableID);
+   var rowCount = table.rows.length;
+
+   for(var i=0; i<rowCount; i++) {
+    var row = table.rows[i];
+    var chkbox = row.cells[0].childNodes[0];
+    if(null != chkbox && true == chkbox.checked) {
+     table.deleteRow(i);
+     rowCount--;
+     i--;
+    }
+
+
+   }
+   }catch(e) {
+    alert(e);
+   }
+  }
+
+ </script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+    
+     <p class="navbar-brand" >Your Recipe</p>
+    </div>
+    <div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+        <li ><a href="#">Home</a></li>
+  <li ><a href="#">Contact</a></li>
+</ul>
+    
+    
+    </div>
+    </div>
+    </nav>
+<form style= "margin-left:30px;" method = "POST" enctype="multipart/form-data" th:object = "${postDesign}">
+
+ <div class="form-group">
+  <label for="usr">Title Of Your Recipe: </label>
+  <input size="4" type="text" class="form-control" id="recipe" th:field = "*{title}"/>
+   <span class="text-danger"
+      		th:if="${#fields.hasErrors('title')}"
+      		th:errors="*{title}">title Error</span>
+
+</div>
+ <input type="button" value="Add Row" onclick="addRow('datatable')" />
+
+ <input type="button" value="Delete Row" onclick="deleteRow('datatable')" /><br>
+ <label >Ingredients</label>
+ <label style = "margin-left:125px; margin-top:15px;">Measurement</label>
+
+ <table id="datatable" width="350px" border="1" th:field = "*{row1}">
+  <tr>
+   <td><input type="checkbox" name="chk"/></td>
+   <td> 1 </td>
+   <td> <input type="text" /> </td>
+   <td> <input type="text"/> </td>
+  </tr>
+ </table>
+ <span class="text-danger"
+      		th:if="${#fields.hasErrors('row1')}"
+      		th:errors="*{row1}">title Error</span>
+      		
+ <div style= "margin-top:15px;"  class="form-group">
+  <label for="preparation">Preparation Of The Recipe: </label>
+  <textarea class="form-control" rows="5" id="prepare" th:field = "*{prep}"></textarea>
+  <span class="text-danger"
+      		th:if="${#fields.hasErrors('prep')}"
+      		th:errors="*{prep}">title Error</span>
+</div>
+<div class="form-group">
+  <label for="time">How Long Does It Take To Prepare This Recipe : </label>
+  <input size="1" type="text" class="form-control" id="time" th:field = "*{time}">
+  <span class="text-danger"
+      		th:if="${#fields.hasErrors('time')}"
+      		th:errors="*{time}">title Error</span>
+</div>
+<div class = "form-group" >
+<label>Select image to upload</label>
+<input  type="file"
+name = "fileToUpload"
+id = "fileToUpload">
+<input type="submit"
+value="Upload Image"
+name = "submit">
+</div>
+ <button type="submit" class="btn btn-default">Submit</button>
+</form>
+ <script th:href="@{/js/jquery-3.3.1.slim.min.js}" src="../js/jquery-3.3.1.slim.min.js"></script>
+    <script th:href="@{/js/popper.min.js}" src="../js/popper.min.js"></script>
+    <script th:href="@{/js/bootstrap.min.js}" src="../js/bootstrap.min.js"></script>
+    <script th:href="@{/js/holder.min.js}" src="../js/holder.min.js"></script>
+ 
+</body>
+
+</html>
