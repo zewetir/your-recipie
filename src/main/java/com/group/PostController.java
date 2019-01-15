@@ -11,31 +11,49 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
+
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Controller
-@RequestMapping("/post")
+@RequestMapping("/addRecipe")
+
 public class PostController {
 	
+private PostRepository postRepository;
+	
+	public PostController(PostRepository postRepository) {
+		this.postRepository = postRepository;
+	}
+	
+	@ModelAttribute("post")
+	public Post post() {
+		return new Post();
+	}
+	
 	@GetMapping
-	public String showDesignForm(Model model) {
-		model.addAttribute("postDesign",new Post());
+	public String recipeForm(Model model) {
+		model.addAttribute("post", new Post());
 		return "posts";
 	}
 	
+	
 	@PostMapping
-	public String processDesign(@Valid @ModelAttribute("postDesign") Post postDesign, Errors errors, Model model) {
+	public String processOrder(@Valid Post post, Errors errors) {
 		
 		if(errors.hasErrors()) {
 			return "posts";
 		}
+		Post saveRecipe = postRepository.save(post);
+		log.info("Recipe submitted: " + saveRecipe);
 		
-		log.info("Processing design: " + postDesign);
+		return "redirect:/";
 		
-		return "posts";
 		
 	}
+	
+	
 	
 	
 }
