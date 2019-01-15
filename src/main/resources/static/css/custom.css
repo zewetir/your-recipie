@@ -26,6 +26,18 @@
       letter-spacing: 4px;
       opacity: 0.9;
   }
+  .twoText{
+  display:inline-block;
+  
+   margin:0;
+  }
+  .twoText textarea{
+  width:40%;
+	margin-right:5%;
+	margin-left:4%;
+	padding-top:15%;
+	
+		 }
   .navbar li a, .navbar .navbar-brand { 
       color: #d5d5d5 !important;
   }

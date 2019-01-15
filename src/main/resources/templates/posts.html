@@ -24,8 +24,10 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a >HOME</a></li>
         
-        <li><a href="#tour">ABOUT</a></li>
-        <li><a href="#contact">CONTACT</a></li>
+         <li><a href="#tour">ADD RECIPE</a></li>
+        
+   <!--  <li><a href="#contact">CONTACT</a></li> -->    
+        
         
           </ul>
     </div>
@@ -47,23 +49,28 @@
           th:errors="*{title}">title Error</span>
 
 </div>
- <input type="button" value="Add Row" onclick="addRow('datatable')" class="btn btn-default"/>
+
+ <!-- <input type="button" value="Add Row" onclick="addRow('datatable')" class="btn btn-default"/>
 
  <input  type="button" value="Delete Row" onclick="deleteRow('datatable')" class="btn btn-default" /><br>
- <label >Ingredients</label>
- <label style = "margin-left:125px; margin-top:15px;">Measurement</label>
 
  <table id="datatable" width="350px">
-  <tr th:value="*{ingredient}">
+  <tr>
    <td><input  type="checkbox" name="chk"/></td>
    <td> 1 </td>
-   <td> <input type="text" th:field = "*{ingredient.ing}"/> </td>
-   <td> <input type="text"th:field = "*{ingredient.mess}"/> </td>
+   <td> <input type="text" th:field = "*{ingredient}"/> </td>
+   <td> <input type="text"th:field = "*{measurement}"/> </td>
   </tr>
- </table>
+ </table>  -->
+  <label >Ingredients</label><label style = "margin-left:125px; margin-top:15px;">Measurement</label> <br>
+ <div class = "twoText">
+  <textarea  th:field = "*{ingredient}"> </textarea>
+  <textarea  th:field = "*{measurement}"></textarea>
+ 
+ </div>
   <span class="text-danger"
-          th:if="${#fields.hasErrors('ingredient')}" 
-         th:errors="*{ingredient}"><br>Table Error<br></span> 
+          th:if="${#fields.hasErrors('ingredient')}"
+         th:errors="*{ingredient}">Table Error<br></span> <br>
          
   <span class="text-danger"
           th:if="${#fields.hasErrors('measurement')}"
