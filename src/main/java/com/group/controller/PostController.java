@@ -1,8 +1,9 @@
-package com.group;
+package com.group.controller;
 
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -11,7 +12,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
+import com.group.domain.Post;
+import com.group.repositories.PostRepository;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -21,8 +23,10 @@ import lombok.extern.slf4j.Slf4j;
 
 public class PostController {
 	
-private PostRepository postRepository;
+	private PostRepository postRepository;
 	
+	
+	@Autowired
 	public PostController(PostRepository postRepository) {
 		this.postRepository = postRepository;
 	}

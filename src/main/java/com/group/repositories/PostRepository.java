@@ -1,8 +1,8 @@
-package com.group;
+package com.group.repositories;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.group.Post;
+import com.group.domain.Post;
 
 
 
