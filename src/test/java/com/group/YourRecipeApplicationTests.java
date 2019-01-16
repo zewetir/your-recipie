@@ -1,4 +1,4 @@
-package com.recipe;
+package com.group;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
