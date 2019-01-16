@@ -1,4 +1,4 @@
-package com.recipe;
+package com.group;
 
 
 import static org.hamcrest.Matchers.containsString;
@@ -14,7 +14,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.recipe.controller.HomeController;
+import com.group.controller.HomeController;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(HomeController.class)   // <1>
