@@ -1,8 +1,8 @@
-package com.recipe.service;
+package com.group.service;
 
 import org.springframework.security.core.userdetails.UserDetailsService;
 
-import com.recipe.security.User;
+import com.group.security.User;
 
 
 

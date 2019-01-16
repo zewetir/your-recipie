@@ -1,4 +1,4 @@
-package com.group;
+package com.recipe;
 
 public class HomePageBrowserTest {
 

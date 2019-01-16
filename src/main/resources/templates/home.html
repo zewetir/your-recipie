@@ -6,7 +6,7 @@
   <title>Your Recipes</title>
   <meta charset="utf-8">
   
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" th:href="@{../css/bootstrap.min.css}" id="bootstrap-css">
   <link rel="stylesheet" th:href="@{../css/custom2.css}" >
   <script th:href="@{../js/jquery.min.js}" src="../js/jquery.min.js"></script>
@@ -18,13 +18,14 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-     <a class="navbar-brand" >Your Recipe</a>
+     <a class="navbar-brand" >YOUR RECIPE</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a >HOME</a></li>
-        <li><a href="#tour">ADD RECIPE</a></li>
+        <li><a th:href = "@{/home}">HOME</a></li>
         
+         <li><a th:href="@{/addRecipe}">ADD RECIPE</a></li>
+          
    <!--  <li><a href="#contact">CONTACT</a></li> -->    
         
           </ul>

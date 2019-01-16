@@ -1,4 +1,4 @@
-package com.recipe.controller;
+package com.group.controller;
 
 import javax.validation.Valid;
 
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.recipe.domain.Login;
-import com.recipe.security.User;
-import com.recipe.service.UserService;
+import com.group.domain.Login;
+import com.group.security.User;
+import com.group.service.UserService;
 
 @Controller
 @RequestMapping("/")

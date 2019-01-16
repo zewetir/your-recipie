@@ -1,4 +1,4 @@
-package com.recipe.configuration;
+package com.group.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

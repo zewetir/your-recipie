@@ -16,7 +16,7 @@ import com.recipe.PostControllerTest;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(PostControllerTest.class)  
-public class PostControllerTest {
+public class LoginControllerTest {
 	  @Autowired
 	  private MockMvc mockMvc;   // <2>
 
@@ -26,7 +26,7 @@ public class PostControllerTest {
 	    
 	      .andExpect(status().isOk())  // <4>
 	      
-	      .andExpect(view().name("post"))  // <5>
+	      .andExpect(view().name("login"))  // <5>
 	      
 	      .andExpect(content().string(           // <6>
 	          containsString("")));  

@@ -1,7 +1,7 @@
-package com.recipe.service;
+package com.group.service;
 import java.util.Optional;
 
-import com.recipe.security.Role;
+import com.group.security.Role;
 
 public interface RoleService {
 

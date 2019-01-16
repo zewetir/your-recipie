@@ -1,4 +1,4 @@
-package com.recipe.security;
+package com.group.security;
 
 import java.util.Collection;
 import java.util.Set;

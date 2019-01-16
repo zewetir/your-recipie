@@ -1,4 +1,4 @@
-package com.recipe.security;
+package com.group.security;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

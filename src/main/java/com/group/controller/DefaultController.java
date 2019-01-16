@@ -1,4 +1,4 @@
-package com.recipe.controller;
+package com.group.controller;
 
 import javax.servlet.http.HttpServletRequest;
 

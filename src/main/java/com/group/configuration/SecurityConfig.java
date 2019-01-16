@@ -1,4 +1,4 @@
-package com.recipe.configuration;
+package com.group.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

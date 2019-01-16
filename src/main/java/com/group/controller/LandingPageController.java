@@ -1,4 +1,4 @@
-package com.recipe.controller;
+package com.group.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

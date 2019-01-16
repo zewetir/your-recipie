@@ -1,4 +1,4 @@
-package com.recipe.service;
+package com.group.service;
 import java.util.Arrays;
 import java.util.HashSet;
 
@@ -8,10 +8,10 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.recipe.repositories.RoleRepository;
-import com.recipe.repositories.UserRepository;
-import com.recipe.security.Role;
-import com.recipe.security.User;
+import com.group.repositories.RoleRepository;
+import com.group.repositories.UserRepository;
+import com.group.security.Role;
+import com.group.security.User;
 
 import lombok.extern.slf4j.Slf4j;
 

@@ -11,3 +11,4 @@ GRANT SELECT ON your_recipe.* to 'recipe_user'@'localhost';
 GRANT INSERT ON your_recipe.* to 'recipe_user'@'localhost';
 GRANT UPDATE ON your_recipe.* to 'recipe_user'@'localhost';
 GRANT DELETE ON your_recipe.* to 'recipe_user'@'localhost';
+insert into  `role` (role) values('RUSER');
