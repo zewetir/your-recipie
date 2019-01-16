@@ -1,0 +1,44 @@
+ <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <title>Your Recipe</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+          
+	<link rel="stylesheet" th:href="@{../css/bootstrap.min.css}" id="bootstrap-css">
+  <link rel="stylesheet" th:href="@{../css/custom.css}" >
+  <script th:href="@{../js/jquery.min.js}" src="../js/jquery.min.js"></script>
+  <script th:href="@{../js/bootstrap.min.js}" src="../js/bootstrap.min.js"></script>
+           </head>
+
+    <body>
+        <section id="banner">
+            <div class="wrapper">
+                <header>
+                    <p class="logo"></p>
+
+                   
+                   </header>
+
+                <div class="content">
+                    <h1>Your Recipe</h1>
+<h2>Ultimate Cookbook
+</h2>
+<h2>The perfect culinary companion for home cooks at every skill level.
+</h2>
+<h2>Place where you can share and get new recipes.</h2>
+                    <div class="button-wrapper">
+                        <a th:href="@{/login}" class="button">LOGIN</a>
+                    
+
+                        <a th:href="@{/registration}" class="button">REGISTER</a>
+                    </div>
+               </div>
+            </div>
+        </section>
+
+</body>
+</html>        
