@@ -53,7 +53,7 @@
 
 </div>
 
- <!-- <input type="button" value="Add Row" onclick="addRow('datatable')" class="btn btn-default"/>
+ <input type="button" value="Add Row" onclick="addRow('datatable')" class="btn btn-default"/>
 
  <input  type="button" value="Delete Row" onclick="deleteRow('datatable')" class="btn btn-default" /><br>
 
@@ -64,13 +64,13 @@
    <td> <input type="text" th:field = "*{ingredient}"/> </td>
    <td> <input type="text"th:field = "*{measurement}"/> </td>
   </tr>
- </table>  -->
-  <label style =  "color:white;" >Ingredients</label><label style = "margin-left:125px; margin-top:15px;">Measurement</label> <br>
+ </table>  
+ <!-- <label style =  "color:white;" >Ingredients</label><label style = "margin-left:125px; margin-top:15px;">Measurement</label> <br>
  <div class = "twoText">
   <textarea  th:field = "*{ingredient}"> </textarea>
   <textarea  th:field = "*{measurement}"></textarea>
  
- </div>
+ </div> --> 
   <span class="text-danger"
           th:if="${#fields.hasErrors('ingredient')}"
          th:errors="*{ingredient}">Table Error<br></span> <br>
