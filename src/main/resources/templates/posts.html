@@ -8,41 +8,48 @@
    
  <title> Post Recipe </title>
  
-   <link rel="stylesheet" th:href="@{../css/bootstrap.min.css}" id="bootstrap-css">
   <link rel="stylesheet" th:href="@{../css/custom.css}" >
-  <script th:href="@{../js/jquery.min.js}" src="../js/jquery.min.js"></script>
-  <script th:href="@{../js/bootstrap.min.js}" src="../js/bootstrap.min.js"></script>
- <script  th:href="@{../js/custom.js}" src = "../js/custom.js"> </script>
+  <link href="../css/bootstrap.min.css"  th:href ="@{../css/bootstrap.min.css}">
+  <script src="../js/bootstrap.min.js" th:src = "@{../js/bootsrap.min.js}"></script>
+  <script src ="../js/jquery.js" th:src ="@{../js/jquery.js}"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<script src="../js/bootstrap.min.js"></script>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
 
-<nav  class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-     <a class="navbar-brand" >YOUR RECIPE</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a th:href = "@{/home}">HOME</a></li>
-        
-         <li><a th:href="@{/addRecipe}">ADD RECIPE</a></li>
-        
-   <!--  <li><a href="#contact">CONTACT</a></li> -->    
-        
-        
-          </ul>
-    </div>
-  </div>
-</nav>	
-
-	
+ <nav style="height:8%;" class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a style="font-size:20px" class="navbar-brand text-white" href="#">Your Recipe</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link text-white" th:href="@{/}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" th:href="@{/addRecipe}">Add Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" th:href="@{/getRecipe}">Get Recipes</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link text-white" th:href="@{/logout}">LOGOUT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  
 <div style =" width:600px; height:650px; position:relative; top:10%; border-radius:16px; height:auto; background-color:rgba(0,0,0,0.5); opacity:0.8;border:solid yellow;"  class="container" > 
 <center>
-				
-	
-<form  method = "POST" enctype="multipart/form-data" th:object = "${post}" th:action = "${addRecipe}">
+        
+  
+<form method = "POST" enctype="multipart/form-data" th:object = "${post}"  th:action = "${addRecipe}" >
 
  <div style = "margin-top:-10%; " class="form-group">
   <label style =  "color:white;" for="usr">Title Of Your Recipe: </label>
@@ -52,8 +59,7 @@
           th:errors="*{title}">title Error</span>
 
 </div>
-
- <input type="button" value="Add Row" onclick="addRow('datatable')" class="btn btn-default"/>
+<!-- <input type="button" value="Add Row" onclick="addRow('datatable')" class="btn btn-default"/>
 
  <input  type="button" value="Delete Row" onclick="deleteRow('datatable')" class="btn btn-default" /><br>
 
@@ -64,13 +70,15 @@
    <td> <input type="text" th:field = "*{ingredient}"/> </td>
    <td> <input type="text"th:field = "*{measurement}"/> </td>
   </tr>
- </table>  
- <!-- <label style =  "color:white;" >Ingredients</label><label style = "margin-left:125px; margin-top:15px;">Measurement</label> <br>
+ </table>  -->
+   
+  <label style =  "color:white;" >Ingredients</label><label style = "margin-left:125px; margin-top:15px;">Measurement</label> <br>
  <div class = "twoText">
   <textarea  th:field = "*{ingredient}"> </textarea>
   <textarea  th:field = "*{measurement}"></textarea>
  
- </div> --> 
+ </div> 
+ 
   <span class="text-danger"
           th:if="${#fields.hasErrors('ingredient')}"
          th:errors="*{ingredient}">Table Error<br></span> <br>
@@ -78,9 +86,7 @@
   <span class="text-danger"
           th:if="${#fields.hasErrors('measurement')}"
          th:errors="*{measurement}">Table Error</span>
-
-          
- <div style= "margin-top:15px;"  class="form-group">
+         <div style= "margin-top:15px;"  class="form-group">
   <label style =  "color:white;"for="preparation">Preparation Of The Recipe: </label>
   <textarea class="form-control" rows="5" id="prepare" th:field = "*{preparation}"></textarea>
   <span class="text-danger"
@@ -97,15 +103,12 @@
 
 <div class = "form-group" >
 <label style =  "color:white;" for = "image">Select image to upload</label>
-<input  type="file"
-name = "fileToUpload"
-id = "fileToUpload">
-<input class="btn btn-default" type="submit"
-value="Upload Image"
-name = "submit">
+<input  type="file" name = "files"  >
 </div>
- <button type="submit" class="btn btn-default">Submit</button>
-</form>
+
+ <input type="submit" class="btn btn-default" value="Submit"/>
+ 
+ </form>
 
 </div>
 </center>
@@ -114,3 +117,4 @@ name = "submit">
  
 </body>
 </html>
+         

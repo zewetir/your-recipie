@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Your Recipe</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<link href="../css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="../css/rating.css" rel="stylesheet">
+
+
+<link href="../css/fontawesome.css" rel="stylesheet">
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/ratings.js"></script>
+
+<script src="../jquery.min.js"></script>
+<script th:src="@{/js/jquery.min.js}"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#">Your Recipe</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link text-white" th:href="@{/}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" th:href="@{/addRecipe}">Add Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" th:href="@{/getRecipe}">Get Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" th:href="@{/logout}">LOGOUT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<div style =" width:600px; height:650px; position:relative; top:10%; border-radius:16px; height:auto;"  class="container" > 
+<center>
+
+<div class="card mt-5" style="width: 60rem;" th:each="recipe,status : ${gets}" >
+  
+  <img class="card-img-top"  th:if="${recipe.generateBase64Image() != null}" th:src="@{'data:image/jpeg;base64,'+${recipe.generateBase64Image()}}" />
+  <div class="card-body">
+  <input class="count" type="hidden" value="0">
+    <h5 class="card-title" th:text=${recipe.title}></h5>
+    <p class="card-text"> Ingredient: <span th:text=${recipe.ingredient}></span></p>
+       <p class="card-text"> Measurement: <span th:text=${recipe.measurement}></span></p>
+     <p class="card-text"> Preparation: <span  th:text=${recipe.preparation}></span> </p>
+    <p class="card-text" >Time: <span th:text=${recipe.time}> </p>
+     <span  onmouseclick="starmark(this)" onclick="starmark(this)" th:id="'1one' + ${status.index}" style="font-size:40px;cursor:pointer;"  class="fa fa-star checked"></span>
+<span onmouseover="starmark(this)" onclick="starmark(this)" th:id="'2one' + ${status.index}"  style="font-size:40px;cursor:pointer;" class="fa fa-star "></span>
+<span onmouseover="starmark(this)" onclick="starmark(this)" th:id="'3one' + ${status.index}"  style="font-size:40px;cursor:pointer;" class="fa fa-star "></span>
+<span onmouseover="starmark(this)" onclick="starmark(this)" th:id="'4one' + ${status.index}"  style="font-size:40px;cursor:pointer;" class="fa fa-star"></span>
+<span onmouseover="starmark(this)" onclick="starmark(this)" th:id="'5one' + ${status.index}"  style="font-size:40px;cursor:pointer;" class="fa fa-star"></span>
+<br/>
+
+
+<button type="button" style="margin-top:10px;margin-left:5px;" class="submit-btn btn btn-lg btn-success">Submit</button>
+  
+  </div>
+</div>
+</div>
+<script>
+var count;
+function starmark(item)
+{
+	count=item.id[0];
+	$("#" + item.id).parent().children('.count').val(count);
+	sessionStorage.starRating = count;
+	var subid= item.id.substring(1);
+	for(var i=0;i<5;i++)
+	{
+		if(i<count)
+		{
+			document.getElementById((i+1)+subid).style.color="orange";
+		}
+		else
+		{
+			document.getElementById((i+1)+subid).style.color="black";
+		}
+	}
+}
+
+$(".submit-btn").on('click', function(){
+	alert($(this).parent().children('.count').val());
+	var json = {
+		rate : count		
+	};
+	
+	$.ajax({
+	      type: 'POST',
+	      url: "rate",
+	      data: myKeyVals,
+	      dataType: "application/json",
+	      success: function(resultData) { alert("Save Complete") }
+	});
+});
+
+</script>
+</body>
+</html>

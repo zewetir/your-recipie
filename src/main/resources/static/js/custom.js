@@ -1,4 +1,8 @@
-  function addRow(tableID) {
+   $('#myCarousel').carousel({
+    interval: 3000,
+ })
+ 
+ function addRow(tableID) {
 
    var table = document.getElementById(tableID);
 
@@ -78,3 +82,4 @@
 	    } // End if
 	  });
 	})
+	

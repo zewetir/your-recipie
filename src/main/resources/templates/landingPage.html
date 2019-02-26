@@ -1,91 +1,96 @@
-<<<<<<< HEAD
- <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" 
-      xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="utf-8">
-        <title>Your Recipe</title>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Your Recipe</title>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-          
-	<link rel="stylesheet" th:href="@{../css/bootstrap.min.css}" id="bootstrap-css">
-  <link rel="stylesheet" th:href="@{../css/custom.css}" >
-  <script th:href="@{../js/jquery.min.js}" src="../js/jquery.min.js"></script>
-  <script th:href="@{../js/bootstrap.min.js}" src="../js/bootstrap.min.js"></script>
-           </head>
 
-    <body>
-        <section id="banner">
-            <div class="wrapper">
-                <header>
-                    <p class="logo"></p>
+<link rel="stylesheet" th:href="@{../css/bootstrap.min.css}">
+<script th:href="@{../js/jquery.min.js}" src="../js/jquery.min.js"></script>
+<link rel="stylesheet" th:href="@{../css/animation.css}">
 
-                   
-                   </header>
+<link rel="stylesheet" th:href="@{../css/land.css}">
+<script th:href="@{../js/bootstrap.min.js}" src="../js/bootstrap.min.js"></script>
 
-                <div class="content">
-                    <h1>Your Recipe</h1>
-<h2>Ultimate Cookbook
-</h2>
-<h2>The perfect culinary companion for home cooks at every skill level.
-</h2>
-<h2>Place where you can share and get new recipes.</h2>
-                    <div class="button-wrapper">
-                        <a th:href="@{/login}" class="button">LOGIN</a>
-                    
+<script th:href="@{../js/custom.js}" src="../js/custom.js"></script>
 
-                        <a th:href="@{/registration}" class="button">REGISTER</a>
-                    </div>
-               </div>
-            </div>
-        </section>
+</head>
+<body>
+	<div style="padding-top: 1%;" id="myCarousel"
+		class="carousel slide carousel-fade" data-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<div class="mask flex-center">
+					<div class="container">
+						<div class="row align-items-center">
+							<div class="col-md-7 col-12 order-md-1 order-2">
+								<h4>Your Recipe</h4>
+								<p>Your Recipe is your  Ultimate Cook book, 
+								The perfect culinary companion for home cooks at every skill level.
+								Its also a place where you can post your own recipes you have created.</p>
+								<a th:href="@{/registration}">GetStarted</a> <a
+									th:href="@{/login}">Login</a>
+							</div>
+							<div class="col-md-5 col-12 order-md-2 order-1">
+								<img src="../images/slide1.jpg" class="mx-auto" alt="slide">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="mask flex-center">
+					<div class="container">
+						<div class="row align-items-center">
+							<div class="col-md-7 col-12 order-md-1 order-2">
+								<h4 class="display-4">Add Recipe Feature</h4>
+								<p>Your Recipe has an add recipe feature which allows users to share their recipe to the world.</p>
+								<a th:href="@{/registration}">GetStarted</a> <a
+									th:href="@{/login}">Login</a>
+							</div>
+							<div class="col-md-5 col-12 order-md-2 order-1">
+								<img src="../images/slide2.jpg" class="mx-auto" alt="slide">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="mask flex-center">
+					<div class="container">
+						<div class="row align-items-center">
+							<div class="col-md-7 col-12 order-md-1 order-2">
+								<h4 class="display-4">Get Recipe Feature</h4>
+								<p>Your Recipe has a Get recipe feature which allows users to get recipes other users shared.</p>
+								<a th:href="@{/registration}">GetStarted</a> <a
+									th:href="@{/login}">Login</a>
+							</div>
+							<div class="col-md-5 col-12 order-md-2 order-1">
+								<img src="../images/slide3.jpg" class="mx-auto" alt="slide">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a class="carousel-control-prev" href="#myCarousel" role="button"
+			data-slide="prev"> <span class="carousel-control-prev-icon"
+			aria-hidden="true"> </span> <span class="sr-only">Previous</span>
+		</a> <a class="carousel-control-next" href="#myCarousel" role="button"
+			data-slide="next"> <span class="carousel-control-next-icon"
+			aria-hidden="true"></span> <span class="sr-only">Next</span>
+		</a>
+	</div>
+	<div style="padding-top:5%" class="container-fluid">
+            <p class="text-center m-0 py-1">
+                © 2019 Copyright <a href="https://getbootstrap.com/" class="text-white">Your Recipe </a>
+            </p>
+        </div>
+	
+
 
 </body>
-</html>        
-=======
- <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" 
-      xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="utf-8">
-        <title>Your Recipe</title>
-
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-          
-	<link rel="stylesheet" th:href="@{../css/bootstrap.min.css}" id="bootstrap-css">
-  <link rel="stylesheet" th:href="@{../css/custom.css}" >
-  <script th:href="@{../js/jquery.min.js}" src="../js/jquery.min.js"></script>
-  <script th:href="@{../js/bootstrap.min.js}" src="../js/bootstrap.min.js"></script>
-           </head>
-
-    <body>
-        <section id="banner">
-            <div class="wrapper">
-                <header>
-                    <p class="logo"></p>
-
-                   
-                   </header>
-
-                <div class="content">
-                    <h1>Your Recipe</h1>
-<h2>Ultimate Cookbook
-</h2>
-<h2>The perfect culinary companion for home cooks at every skill level.
-</h2>
-<h2>Place where you can share and get new recipes.</h2>
-                    <div class="button-wrapper">
-                        <a th:href="@{/login}" class="button">LOGIN</a>
-                    
-
-                        <a th:href="@{/registration}" class="button">REGISTER</a>
-                    </div>
-               </div>
-            </div>
-        </section>
-
-</body>
-</html>        
->>>>>>> adc36aef04bbd79d43a84832484ded12d1e92e24
+</html>
